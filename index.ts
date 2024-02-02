@@ -7,6 +7,8 @@ const port = 80;
 
 // Define a route to serve the main HTML file
 app.get('/', (req, res) => {
+  res.header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+
   const hostname = req.hostname;
 
   const rootLink = links["root"];
