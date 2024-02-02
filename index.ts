@@ -1,5 +1,5 @@
 import express from "express"
-import links from "./links.json"
+import links from "./links.json" assert { type: "json" };
 
 const app = express();
 const port = 80;
