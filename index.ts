@@ -1,5 +1,5 @@
 import express from "express"
-import links from "./links.json" assert { type: "json" };
+import links from "./links.json" assert {type: "json"};
 
 const app = express();
 const port = 80;
@@ -93,7 +93,7 @@ app.get('/', (req, res) => {
   }
 
   if (!link) {
-    return buildHtml(rootLink)
+    return res.send(buildHtml(rootLink))
   }
 
   return res.send(buildHtml(link))
