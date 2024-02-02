@@ -4,7 +4,7 @@ import links from "./links.json"
 const app = express();
 const port = 80;
 
-function buildHtml(link) {
+function buildHtml(link: string) {
   return `
   <!DOCTYPE html>
 <html lang="en">
