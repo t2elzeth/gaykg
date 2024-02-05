@@ -83,9 +83,11 @@ app.get('/', (req, res) => {
 
   const hostname = req.hostname;
 
-  const rootLink = links["root"];
-
   let link: string | undefined = undefined;
+
+  if (hostname === "gay.kg") {
+    return res.send(buildHtml(links["root"]))
+  }
 
   if (!hostname.startsWith("gay.kg")) {
     const subdomain = hostname.split('.')[0]
@@ -93,7 +95,7 @@ app.get('/', (req, res) => {
   }
 
   if (!link) {
-    return res.send(buildHtml(rootLink))
+    return res.sendStatus(404)
   }
 
   return res.send(buildHtml(link))
